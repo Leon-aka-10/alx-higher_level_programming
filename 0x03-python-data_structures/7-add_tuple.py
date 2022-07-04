@@ -10,7 +10,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     elif length_a == 1:
         a1 = tuple_a[0]
         a2 = 0
-    else
+    else:
         a1 = tuple_a[0]
         a2 = tuple_a[1]
 
