@@ -5,6 +5,9 @@ A script made of a class that defines a Rectangle
 """
 class Rectangle:
 	""" Class that defines a rectangle """
+
+	number_of_instances = 0
+	print_symbol = "#"
 	
 	def _init_(self, width=0, height=0):
 		""" Method that initializes the instance """
@@ -63,3 +66,21 @@ class Rectangle:
 	def __repr__(self):
 		""" Method that returns the cannonical string of the instance """
 		return "Rectangle({:d}, {:d})".format(self.width, self.height)
+
+	def __del__(self):
+		""" Method that prints a message when the instance is deleted """
+		Rectangle.number_of_instances -= 1
+		print("Bye rectangle...")
+
+	@staticmethod
+	def bigger_or_equal(rect_1, rect_2):
+		""" Method that returns the bigger Rectangle """
+		if not isinstance(rect_1, Rectangle):
+	           raise TypeError("rect_1 must be an instance of Rectangle")
+		if not isinstance(rect_2, Rectangle):
+		   raise TypeError("rect_2 must be an instance of Rectangle")
+
+		if rect_1.area() >= rect_2.area():
+			return rect_1
+		else:
+		     return rect_2

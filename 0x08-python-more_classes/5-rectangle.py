@@ -38,3 +38,32 @@ class Rectangle:
 		if value < 0:
 		        raise ValueError("height must be >= 0")
 		self._height = value
+
+	def area(self):
+		""" Method that calculates the area of a rectangle """
+		return self.width * self.height
+
+	def perimeter(self):
+		""" Method that calculates the perimeter of a rectangle """
+		if self.width == 0 or self.height == 0:
+		   return 0
+		return (2 * self.width) + (2 * self.height)
+	
+	def _str_(self):
+		""" Method that returns the Rectangle # """
+		rectangle = ""
+		if self.width == 0 or self.height == 0:
+		   return rectangle
+
+		for x in range(self.height):
+		    rectangle += ("#" * self.width) + "\n"
+
+		return rectangle[:-1]
+
+	def __repr__(self):
+		""" Method that returns the cannonical string of the instance """
+		return "Rectangle({:d}, {:d})".format(self.width, self.height)
+
+	def __del__(self):
+		""" Method that prints a message when the instance is deleted """
+		print("Bye rectangle...")
