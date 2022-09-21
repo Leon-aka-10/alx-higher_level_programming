@@ -4,6 +4,8 @@
 This modle is an empty class
 
 """
+
+
 class Rectangle:
     """ Empty class """
     pass
