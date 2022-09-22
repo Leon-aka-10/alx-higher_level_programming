@@ -13,6 +13,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -65,14 +66,14 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return rectangle
         for x in range(self.height):
-            rectangle += ("#" * self.width) + "\n"
+            rectangle += (str(self.print_symbol) * self.width) + "\n"
 
         return rectangle[:-1]
 
     def __repr__(self):
         """ Function that returns the cannonical string
         """
-        return "Rectangle({:d}, {:d})".format(self.width, self.height)
+        return ("Rectangle({:d}, {:d})".format(self.width, self.height))
 
     def __del__(self):
         """ Function delete message
